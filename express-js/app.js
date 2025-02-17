@@ -7,8 +7,8 @@ const app = express();
 
 const adminRouters = require('./routes/admin');
 const shopRouters = require('./routes/shop');
-// const rootDir=require('util/path');
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/admin', adminRouters);
